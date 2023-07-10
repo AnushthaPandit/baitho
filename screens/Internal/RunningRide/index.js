@@ -7,6 +7,7 @@ import {
   HStack,
   Divider,
   VStack,
+  Button,
 } from 'native-base';
 import {StyleSheet} from 'react-native';
 import React, {useRef, useCallback} from 'react';
@@ -22,6 +23,7 @@ import useRideLiveStatus from './useRideLiveStatus';
 import {formatDistance} from '../../../utils/location.utils';
 import colors from '../../../constants/colors';
 import circle_car_img from '../../../assets/images/circle_car.png';
+import EndRide from './EndRide';
 
 const RunningRide = () => {
   const coords = useCoords();
@@ -191,6 +193,8 @@ const RunningRide = () => {
               </RenderWhen>
             </VStack>
           </RenderWhen>
+
+          <EndRide plateNumber={running_ride?.bus_plate_number} />
         </Box>
       </Box>
     </View>
