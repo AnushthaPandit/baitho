@@ -29,6 +29,7 @@ const routeNames = {
       HOME: 'Home',
       STATION_SEARCH: 'Search Stop',
       RUNNING_RIDE: 'Running Ride',
+      SHUTTLE_BUS_TT: 'Shuttle Bus Schedules',
     },
   },
   LOGIN: {

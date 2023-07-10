@@ -14,18 +14,20 @@ const useCoords = () => {
   });
 
   useEffect(() => {
-    getLiveLocation().then(coords => {
-      if (coords) {
-        setcurr_coords({
-          latitude: coords.latitude,
-          longitude: coords.longitude,
-        });
-      } else {
-        alert(
-          "We're having a trouble getting your location please provide location permission!",
-        );
-      }
-    });
+    setInterval(() => {
+      getLiveLocation().then(coords => {
+        if (coords) {
+          setcurr_coords({
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+          });
+        } else {
+          alert(
+            "We're having a trouble getting your location please provide location permission!",
+          );
+        }
+      });
+    }, 3000);
   }, []);
 
   return curr_coords;
